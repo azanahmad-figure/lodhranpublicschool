@@ -1,0 +1,8 @@
+<!mongodb ver:1.0>
+
+<login> 
+
+var set username
+var set password
+
+</login>
