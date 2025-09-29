@@ -1,0 +1,516 @@
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LPS | Home</title>
+  <meta name="description" content="tabahiiii website!!" />
+
+  <style>
+
+    
+   /* click to enter krne wali overlayy  */
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(9, 30, 65, 0.7);
+    backdrop-filter: blur(18px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+    overflow: hidden; /* for particles */
+  }
+
+  /* non existent particles */
+  .overlay canvas {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  /* Glowing + wiggly text */
+  .overlay h1 {
+    position: relative;
+    z-index: 1;
+    font-size: 42px;
+    font-weight: 900;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+
+    text-shadow: 0 0 12px var(--accent-1),
+                 0 0 24px var(--accent-2),
+                 0 0 48px var(--accent-1);
+
+    animation: glowPulse 2s infinite alternate,
+               wiggle 1.8s infinite ease-in-out;
+  }
+
+  @keyframes glowPulse {
+    from {
+      text-shadow: 0 0 8px var(--accent-1),
+                   0 0 16px var(--accent-2);
+    }
+    to {
+      text-shadow: 0 0 22px var(--accent-2),
+                   0 0 44px var(--accent-1);
+    }
+  }
+
+  @keyframes wiggle {
+    0%, 100% { transform: rotate(0deg) translateX(0); }
+    15% { transform: rotate(-3deg) translateX(-2px); }
+    30% { transform: rotate(3deg) translateX(2px); }
+    45% { transform: rotate(-2deg) translateX(-1px); }
+    60% { transform: rotate(2deg) translateX(1px); }
+    75% { transform: rotate(-1deg) translateX(-1px); }
+  }
+
+  /* Hide overlay after click */
+  .overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+    backdrop-filter: blur(0px);
+  }
+  
+
+
+    :root{
+      --bg: #0f1724;
+      --card: rgba(255,255,255,0.04);
+      --glass: rgba(255,255,255,0.06);
+      /* Updated accent colors for a more attractive palette */
+      --accent-1:  #a855f7; /* Vibrant Purple */
+      --accent-2:  #22d3ee; /* Bright Teal */
+      --muted: #9aa5b1;
+      --glass-border: rgba(255,255,255,0.08);
+      --radius: 14px;
+      --fw-heading: 800;
+      --fw-body: 400;
+      --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+
+
+      
+      margin:0;
+      font-family:var(--font-sans);
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(168,85,247,0.12), transparent 6%),
+                  radial-gradient(900px 400px at 90% 90%, rgba(34,211,238,0.08), transparent 6%),
+                  var(--bg);
+      color: #e6eef6;
+      line-height:1.4;
+      padding:40px;
+    }
+
+    .site{
+      max-width:1200px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns: 300px 1fr;
+      gap:28px;
+      align-items:start;
+    }
+
+    .sidebar{
+      position:sticky;
+      top:40px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:22px;
+      border-radius:var(--radius);
+      border:1px solid var(--glass-border);
+      backdrop-filter: blur(8px) saturate(120%);
+      box-shadow: 0 6px 24px rgba(2,6,23,0.6);
+      /* Ensure sidebar is scrollable on small screens if content overflows */
+      max-height: calc(100vh - 80px); /* 100vh - (top + bottom padding) */
+      overflow-y: auto;
+    }
+
+    .brand{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+    .logo{width:56px;height:56px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent-1),var(--accent-2));font-weight:900;font-size:18px;color:white;box-shadow:0 6px 18px rgba(168,85,247,0.16)}
+    .brand h1{font-size:16px;margin:0}
+    .brand p{margin:0;color:var(--muted);font-size:13px}
+
+    nav ul{list-style:none;padding:0;margin:14px 0 0 0;display:flex;flex-direction:column;gap:8px}
+    nav a{display:flex;gap:10px;align-items:center;padding:10px;border-radius:10px;text-decoration:none;color:inherit;font-weight:600;transition:all .28s cubic-bezier(.2,.9,.2,1)}
+    nav a:hover{transform:translateY(-4px) scale(1.01);filter:brightness(1.06)}
+    nav a .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--accent-1),var(--accent-2));box-shadow:0 6px 18px rgba(34,211,238,0.12)}
+
+    main{min-height:80vh}
+
+    .hero{border-radius:18px;padding:28px;border:1px solid var(--glass-border);display:flex;gap:20px;align-items:center;overflow:hidden;position:relative;background-size:cover;background-position:center}
+    .hero::before{content:"";position:absolute;inset:0;background:rgba(15,23,36,0.6);backdrop-filter:blur(10px);z-index:0}
+    .hero .left,.hero .glass-card{position:relative;z-index:1}
+    .hero h2{font-size:28px;margin:0 0 6px 0;font-weight:var(--fw-heading);letter-spacing:-0.02em}
+    .hero p{margin:0;color:var(--muted);max-width:60%}
+
+    .cta{margin-top:18px;display:inline-grid;place-items:center;padding:12px 18px;border-radius:12px;font-weight:700;background:linear-gradient(90deg,var(--accent-1),var(--accent-2));color:white;border:none;cursor:pointer;box-shadow:0 10px 30px rgba(7,12,34,0.6), 0 2px 0 rgba(255,255,255,0.04) inset;transition:transform .25s ease, box-shadow .25s ease}
+    .cta:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 18px 48px rgba(7,12,34,0.6)}
+
+    .glass-card{width:220px;height:150px;border-radius:14px;padding:14px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid var(--glass-border);display:flex;flex-direction:column;gap:8px;justify-content:center;align-items:center;transform:translateZ(0);transition:transform .45s cubic-bezier(.17,.67,.1,1), box-shadow .45s}
+    .glass-card:hover{transform:translateY(-12px) rotate(-2deg) scale(1.03);box-shadow:0 30px 70px rgba(34,211,238,0.06)}
+    .glass-card .num{font-size:36px;font-weight:800}
+    .glass-card small{color:var(--muted)}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:22px}
+    .card{background:var(--card);padding:18px;border-radius:12px;border:1px solid var(--glass-border);transition:transform .3s ease, box-shadow .3s ease;overflow:hidden;position:relative}
+    .card::after{content:'';position:absolute;left:-40%;top:0;width:40%;height:100%;transform:skewX(-18deg) translateX(-100%);background:linear-gradient(90deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02),transparent);transition:transform .7s ease}
+    .card:hover{transform:translateY(-10px);box-shadow:0 18px 60px rgba(2,6,23,0.6)}
+    .card:hover::after{transform:skewX(-18deg) translateX(220%)}
+    .card h3{margin:0 0 8px 0;font-size:16px}
+    .card p{margin:0;color:var(--muted);font-size:14px}
+
+    /* IMAGE SHOWCASE */
+    .image-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:24px}
+    .image-card{position:relative;overflow:hidden;border-radius:12px;border:1px solid var(--glass-border);background:var(--card);box-shadow:0 10px 30px rgba(2,6,23,0.6);transition:transform .35s ease, box-shadow .35s ease}
+    .image-card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;transition:transform .4s ease}
+    .image-card:hover{transform:translateY(-10px) scale(1.02);box-shadow:0 20px 60px rgba(7,12,34,0.7)}
+    .image-card:hover img{transform:scale(1.08)}
+    .image-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.45));opacity:0;transition:opacity .4s}
+    .image-card:hover::after{opacity:1}
+    .image-card .caption{position:absolute;bottom:12px;left:12px;color:#fff;font-weight:600;text-shadow:0 2px 8px rgba(0,0,0,0.8)}
+
+    /* Student and Staff Cards - new styles */
+    .person-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        background: var(--card);
+        padding: 20px;
+        border-radius: 12px;
+        border: 1px solid var(--glass-border);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .person-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 18px 60px rgba(168,85,247,0.1);
+    }
+
+    .person-card img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 15px;
+        border: 3px solid var(--accent-1);
+        box-shadow: 0 0 0 5px rgba(168,85,247,0.2), 0 0 20px rgba(34,211,238,0.1);
+        transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    .person-card:hover img {
+      transform: scale(1.05);
+      border-color: var(--accent-2);
+    }
+
+    .person-card h4 {
+        margin: 0 0 6px 0;
+        font-size: 18px;
+        color: white;
+    }
+
+    .person-card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+    }
+
+
+    .feature{margin-top:22px;padding:18px;border-radius:12px;border:1px solid var(--glass-border);display:flex;gap:12px;align-items:center}
+    .feature .preview{width:110px;height:70px;border-radius:10px;background:linear-gradient(90deg,var(--accent-2),var(--accent-1));display:grid;place-items:center;font-weight:900}
+
+    .timeline{margin-top:22px;display:flex;flex-direction:column;gap:10px}
+    .step{display:flex;gap:12px;align-items:flex-start}
+    .step .dot{width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,var(--accent-1),var(--accent-2))}
+    .step .meta{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:10px;border-radius:8px;border:1px solid var(--glass-border)}
+    .step .meta h4{margin:0 0 6px 0}
+    .step .meta p{margin:0;color:var(--muted);font-size:13px}
+
+    form{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    input,textarea{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:12px;border-radius:10px;color:inherit;outline:none}
+    input:focus,textarea:focus{border-color:rgba(255,255,255,0.14);box-shadow:0 6px 30px rgba(124,58,237,0.06)}
+    textarea{grid-column:1/3;min-height:110px}
+    .send{grid-column:1/3;display:inline-grid;place-items:center;padding:12px;border-radius:10px;background:linear-gradient(90deg,var(--accent-1),var(--accent-2));font-weight:700;cursor:pointer;border:none}
+
+    /* Responsive adjustments */
+    @media (max-width:980px){
+      body{padding:20px}
+      .site{
+        grid-template-columns:1fr; /* Stack sidebar and main content */
+        gap: 20px;
+      }
+      .sidebar{
+        position:static; /* Remove sticky on small screens */
+        max-height: unset; /* Remove fixed height constraint */
+      }
+      .hero{flex-direction:column;text-align:center;gap:30px}
+      .hero p{max-width:100%}
+      .hero .glass-card{width:80%;height:auto;padding:20px}
+      .grid, .image-grid, #bright-students .grid, #teaching-staff .grid {
+        grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); /* Adjust min-width for smaller cards */
+      }
+      .glass-card.floaty {
+        width: 100%; /* Make sidebar glass card full width */
+      }
+    }
+
+    @media (max-width:500px) {
+      body {
+        padding: 15px;
+      }
+      .hero h2 {
+        font-size: 24px;
+      }
+      .grid, .image-grid, #bright-students .grid, #teaching-staff .grid {
+        grid-template-columns: 1fr; /* Stack all cards on very small screens */
+      }
+      .person-card img {
+        width: 100px;
+        height: 100px;
+      }
+    }
+
+
+    @keyframes floaty{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
+    .floaty{animation:floaty 5s ease-in-out infinite}
+
+    .muted{color:var(--muted)}
+    .small{font-size:13px}
+
+    /* General section styling for spacing */
+    section {
+      margin-bottom: 40px; /* Add some space between sections */
+    }
+  </style>
+</head>
+<body>
+  <!-- Click-to-enter overlay -->
+
+
+  <div class="site">
+
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo">LPS</div>
+        <div>
+          <h1>Lodhran Public School.</h1>
+          <p>Providing quality education since 1980</p>
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="#intro"><span class="dot"></span> Home</a></li>
+          <li><a href="#features"><span class="dot"></span> Features</a></li>
+          <li><a href="#gallery"><span class="dot"></span> Gallery</a></li>
+          <li><a href="#bright-students"><span class="dot"></span> Bright Students</a></li>
+          <li><a href="#teaching-staff"><span class="dot"></span> Teaching Staff</a></li>
+          <li><a href="#timeline"><span class="dot"></span> Principal's Message</a></li>
+          <li><a href="#contact"><span class="dot"></span> Contact</a></li>
+        </ul>
+      </nav>
+
+      <div style="margin-top:16px">
+        <div class="glass-card floaty">
+          <div class="num">5000+</div>
+          <small>Students served with quality education.</small>
+        </div>
+        <p class="small muted" style="margin-top:12px">Serving since 1980.</p>
+      </div>
+    </aside>
+
+    <main>
+      <section id="intro" class="hero" style="background-image:url('images/main.png');">
+        <div class="left">
+          <h2>Lodhran Public School.</h2>
+          <p>Lodhran Public School (LPS), run by the Tareen Education Foundation (TEF), is a school in Lodhran, Pakistan, offering a private, internationally-standard education, particularly focused on preparing students for CAIE O Level and A Level examinations.</p>
+          <a href="https://www.lps.tef.com.pk/" class="cta" id="demoButton">Learn More.</a>
+        </div>
+        <div class="glass-card">
+          <div class="num">A+</div>
+          <small>Quality Education</small>
+        </div>
+      </section>
+
+      <section id="features" class="grid">
+        <article class="card">
+          <h3>Modern Infrastructure</h3>
+          <p>Lodhran Public School features a renovated building and new facilities, including a digital learning center, a well-equipped library, science laboratories, an art room, and a conference room. </p>
+        </article>
+        <article class="card">
+          <h3>Technology Integration</h3>
+          <p>The school is supported by the Tareen Education Foundation (TEF), which focuses on improving education through IT, as evidenced by the establishment of a Digital Learning Centre and upgrades to computer laboratories. </p>
+        </article>
+        <article class="card">
+          <h3>Public-Private Collaboration</h3>
+          <p>The school operates in collaboration with the Tareen Education Foundation and the Education Department, Punjab, ensuring a strong foundation for educational standards.</p>
+        </article>
+        <article class="card">
+          <h3>Student-Centered Environment</h3>
+          <p>The school aims to create a dynamic and supportive learning environment where students can develop their full potential. </p>
+        </article>
+      </section>
+
+      <section id="gallery" class="image-grid">
+        <div class="image-card">
+          <img src="images/pic1.jpg" alt="Music Festival" />
+          <div class="caption">Music Festival</div>
+        </div>
+        <div class="image-card">
+          <img src="images/pic2.jpg" alt="Taekwondo 2023" />
+          <div class="caption">Taekwondo 2023</div>
+        </div>
+        <div class="image-card">
+          <img src="images/pic3.jpg" alt="Taekwondo 2023" />
+          <div class="caption">Taekwondo 2023</div>
+        </div>
+        <div class="image-card">
+          <img src="images/pic4.jpg" alt="Learning Library" />
+          <div class="caption">Learning Library</div>
+        </div>
+        <div class="image-card">
+          <img src="images/pic5.png" alt="IT Lab" />
+          <div class="caption">IT Lab</div>
+        </div>
+        <div class="image-card">
+          <img src="images/pic6.png" alt="Photography Club" />
+          <div class="caption">Photography Club</div>
+        </div>
+      </section>
+
+      <!-- naye bache bright students -->
+      <section id="bright-students">
+        <h2 style="font-size:28px; margin-bottom:20px; text-align:center; font-weight:var(--fw-heading);">Our Bright Students</h2>
+        <p class="muted small" style="text-align:center; max-width: 600px; margin: 0 auto 30px auto;">Celebrating the achievements and potential of our standout students. We believe in nurturing every talent.</p>
+        <div class="grid">
+          <div class="person-card">
+            <img src="images/brightstudents/uzair.png" alt="Student Name 1" />
+            <h4>Uzair</h4>
+            <p>9th Class Student</p>
+            <p class="small muted">An upcoming future of LPS and Lodhran City, a professional in Math. A backbencher, but always on top.</p>
+          </div>
+          <div class="person-card">
+            <img src="images/brightstudents/azaan.png" alt="Student Name 3" />
+            <h4>Azaan Ahmed</h4>
+            <p></p>
+            <p class="small muted">Hi, I'm Azaan, I really love to do creative stuff like coding, video editing and adobe creative cloud in my spare time!</p>
+          </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- staff ☠️ -->
+      <section id="teaching-staff">
+        <h2 style="font-size:28px; margin-bottom:20px; text-align:center; font-weight:var(--fw-heading);">Our Dedicated Teaching Staff</h2>
+        <p class="muted small" style="text-align:center; max-width: 600px; margin: 0 auto 30px auto;">Meet the inspiring educators who shape young minds and foster a love for learning at LPS.</p>
+        <div class="grid">
+          <div class="person-card">
+            <img src="images/staff/principal.png" alt="Principal Rashid Anwar" />
+            <h4>Mr. Rashid Anwar</h4>
+            <p>Principal</p>
+            <p class="small muted">Leading our school with vision and dedication since 2024, ensuring excellence in education.</p>
+          </div>
+          <div class="person-card">
+            <img src="images/staff/mshafsa.png" alt="Vice Principal Samina Tariq" />
+            <h4>Ms. Hafsa</h4>
+            <p>Vice Principal</p>
+            <p class="small muted">Supporting academic and administrative efforts, fostering a positive learning environment.</p>
+          </div>
+          <div class="person-card">
+            <img src="images/staff/zarina.png" alt="Teacher Name 1" />
+            <h4>Ms. Zarina</h4>
+            <p>Vice Principal</p>
+            <p class="small muted">Supporting academics and administration while fostering a positive learning environment.</p>
+          </div>
+
+          <div class="person-card">
+            <img src="images/staff/mswardah.png" alt="Teacher Name 3" />
+            <h4>Ms. Wardah</h4>
+            <p>IT Teacher</p>
+            <p class="small muted">Guiding students through technology and digital skills</p>
+          </div>
+          <div class="person-card">
+            <img src="images/staff/sirrashid.png" alt="Teacher Name 4" />
+            <h4>Mr. Rashid</h4>
+            <p>Nazra/Islamiat Teacher</p>
+            <p class="small muted">Helping learners connect with Allah’s words through tajweed and meaning.</p>
+          </div>
+          <div class="person-card">
+            <img src="images/staff/sirali.png" alt="Teacher Name 5" />
+            <h4>Mr. Ali Abbas</h4>
+            <p>Helps students unlock the power of numbers and problem-solving.</p>
+            <p class="small muted">to be added  </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="timeline" class="feature">
+        <div class="preview">Current</div>
+        <div>
+          <h3>Principal's Message</h3>
+          <p class="muted small">A message from our current esteemed Principal.</p>
+        </div>
+      </section>
+
+      <section class="timeline">
+        <div class="step">
+          <div class="dot"></div>
+          <div class="meta"><h4>Mr. Rashid Anwar</h4><p class="muted small">2024 - Current</p>
+            <p class="muted small" style="margin-top: 8px;">"I am honored to lead Lodhran Public School as we continue our journey of academic excellence and holistic development. Our commitment is to provide a nurturing and innovative environment where every student can thrive."</p>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Contact Form -->
+      <section id="contact">
+        <h2 style="font-size:28px; margin-bottom:20px; text-align:center; font-weight:var(--fw-heading);">Contact Us</h2>
+        <p class="muted small" style="text-align:center; max-width: 600px; margin: 0 auto 30px auto;">Have questions or want to learn more? Reach out to us through the form below.</p>
+        <form>
+          <input type="text" placeholder="Your Name" />
+          <input type="email" placeholder="Your Email" />
+          <textarea placeholder="Your Message"></textarea>
+          <button type="submit" class="send">Send Message</button>
+        </form>
+      </section>
+
+      <p style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;font-weight:bold;">Contributed by Azaan.</p>
+    </main>
+  </div>
+
+  <script>
+    const overlay = document.getElementById("entryOverlay");
+    overlay.addEventListener("click", () => {
+      overlay.classList.add("hidden");
+    });
+
+    // Smooth scroll for navigation links
+    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Add particle effect to overlay for extra fancy
+    // This is a minimal particle setup, a full library would be more robust
+    // This script can be expanded for more complex particle effects
+    const canvas = document.createElement('canvas');
+    overlay.appendChild(canvas);
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    const particleCount = 50;
+
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
