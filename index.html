@@ -9,7 +9,9 @@
   <meta name="description" content="tabahiiii website!!" />
 
   <style>
-
+html {
+  scroll-behavior: smooth;
+}
     
    /* click to enter krne wali overlayy  */
   .overlay {
@@ -25,7 +27,7 @@
     overflow: hidden; /* for particles */
   }
 
-  /* non existent particles */
+  /* non existent particles ☠️ */
   .overlay canvas {
     position: absolute;
     inset: 0;
@@ -84,8 +86,8 @@
       --card: rgba(255,255,255,0.04);
       --glass: rgba(255,255,255,0.06);
       /* Updated accent colors for a more attractive palette */
-      --accent-1:  #a855f7; /* Vibrant Purple */
-      --accent-2:  #22d3ee; /* Bright Teal */
+      --accent-1:  #190864; /* Vibrant Purple */
+      --accent-2:  #9901f1; /* Bright Teal */
       --muted: #9aa5b1;
       --glass-border: rgba(255,255,255,0.08);
       --radius: 14px;
@@ -102,8 +104,7 @@
       
       margin:0;
       font-family:var(--font-sans);
-      background: radial-gradient(1200px 600px at 10% 10%, rgba(168,85,247,0.12), transparent 6%),
-                  radial-gradient(900px 400px at 90% 90%, rgba(34,211,238,0.08), transparent 6%),
+      background: #13142b;
                   var(--bg);
       color: #e6eef6;
       line-height:1.4;
@@ -146,7 +147,7 @@
     main{min-height:80vh}
 
     .hero{border-radius:18px;padding:28px;border:1px solid var(--glass-border);display:flex;gap:20px;align-items:center;overflow:hidden;position:relative;background-size:cover;background-position:center}
-    .hero::before{content:"";position:absolute;inset:0;background:rgba(15,23,36,0.6);backdrop-filter:blur(10px);z-index:0}
+    .hero::before{content:"";position:absolute;inset:0;background:rgba(15,23,36,0.6);backdrop-filter:blur(2px);z-index:0}
     .hero .left,.hero .glass-card{position:relative;z-index:1}
     .hero h2{font-size:28px;margin:0 0 6px 0;font-weight:var(--fw-heading);letter-spacing:-0.02em}
     .hero p{margin:0;color:var(--muted);max-width:60%}
@@ -291,7 +292,6 @@
   </style>
 </head>
 <body>
-  <!-- Click-to-enter overlay -->
 
 
   <div class="site">
@@ -319,7 +319,7 @@
 
       <div style="margin-top:16px">
         <div class="glass-card floaty">
-          <div class="num">5000+</div>
+          <div class="num">2000+</div>
           <small>Students served with quality education.</small>
         </div>
         <p class="small muted" style="margin-top:12px">Serving since 1980.</p>
@@ -402,6 +402,12 @@
             <p></p>
             <p class="small muted">Hi, I'm Azaan, I really love to do creative stuff like coding, video editing and adobe creative cloud in my spare time!</p>
           </div>
+          <div class="person-card">
+            <img src="images/brightstudents/ammar.jpeg" alt="Student Name 3" />
+            <h4>Ammar Haider</h4>
+            <p>A backbencher’s mind, a mathematician’s soul. The next big thing from Lodhran City.</p>
+            <p class="small muted"></p>
+          </div>
           </div>
         </div>
       </section>
@@ -434,7 +440,7 @@
             <img src="images/staff/mswardah.png" alt="Teacher Name 3" />
             <h4>Ms. Wardah</h4>
             <p>IT Teacher</p>
-            <p class="small muted">Guiding students through technology and digital skills</p>
+            <p class="small muted">Guiding students through technology and digital skills.</p>
           </div>
           <div class="person-card">
             <img src="images/staff/sirrashid.png" alt="Teacher Name 4" />
@@ -445,8 +451,8 @@
           <div class="person-card">
             <img src="images/staff/sirali.png" alt="Teacher Name 5" />
             <h4>Mr. Ali Abbas</h4>
-            <p>Helps students unlock the power of numbers and problem-solving.</p>
-            <p class="small muted">to be added  </p>
+            <p>Maths Teacher</p>
+            <p class="small muted">Helps students unlock the power of numbers and problem-solving.</p>
           </div>
         </div>
       </section>
