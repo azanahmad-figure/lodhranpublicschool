@@ -86,8 +86,8 @@ html {
       --card: rgba(255,255,255,0.04);
       --glass: rgba(255,255,255,0.06);
       /* Updated accent colors for a more attractive palette */
-      --accent-1:  #190864; /* Vibrant Purple */
-      --accent-2:  #9901f1; /* Bright Teal */
+      --accent-1:  #b47d0f; /* Vibrant Purple */
+      --accent-2:  #142657; /* Bright Teal MAIN BG */
       --muted: #9aa5b1;
       --glass-border: rgba(255,255,255,0.08);
       --radius: 14px;
@@ -104,7 +104,7 @@ html {
       
       margin:0;
       font-family:var(--font-sans);
-      background: #13142b;
+      background: #091409; 
                   var(--bg);
       color: #e6eef6;
       line-height:1.4;
@@ -133,7 +133,7 @@ html {
       max-height: calc(100vh - 80px); /* 100vh - (top + bottom padding) */
       overflow-y: auto;
     }
-
+     .video-container { width: 100%; max-width: 900px; aspect-ratio: 16 / 9; margin: 0 auto; border-radius: 16px; overflow: hidden; } .video-container iframe { width: 100%; height: 100%; border: 0; }
     .brand{display:flex;gap:12px;align-items:center;margin-bottom:18px}
     .logo{width:56px;height:56px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent-1),var(--accent-2));font-weight:900;font-size:18px;color:white;box-shadow:0 6px 18px rgba(168,85,247,0.16)}
     .brand h1{font-size:16px;margin:0}
@@ -301,7 +301,7 @@ html {
         <div class="logo">LPS</div>
         <div>
           <h1>Lodhran Public School.</h1>
-          <p>Providing quality education since 1980</p>
+          <p>Honour ⋆ Wisdom ⋆ Quality</p>
         </div>
       </div>
 
@@ -322,7 +322,7 @@ html {
           <div class="num">2000+</div>
           <small>Students served with quality education.</small>
         </div>
-        <p class="small muted" style="margin-top:12px">Serving since 1980.</p>
+        <p class="small muted" style="margin-top:12px">The hub of regional study.</p>
       </div>
     </aside>
 
@@ -330,7 +330,7 @@ html {
       <section id="intro" class="hero" style="background-image:url('images/main.png');">
         <div class="left">
           <h2>Lodhran Public School.</h2>
-          <p>Lodhran Public School (LPS), run by the Tareen Education Foundation (TEF), is a school in Lodhran, Pakistan, offering a private, internationally-standard education, particularly focused on preparing students for CAIE O Level and A Level examinations.</p>
+          <p>Lodhran Public School (LPS), run by the Government, is a school in Lodhran, Pakistan, offering a private, internationally-standard education, particularly focused on preparing students for Matric examinations.</p>
           <a href="https://www.lps.tef.com.pk/" class="cta" id="demoButton">Learn More.</a>
         </div>
         <div class="glass-card">
@@ -346,7 +346,7 @@ html {
         </article>
         <article class="card">
           <h3>Technology Integration</h3>
-          <p>The school is supported by the Tareen Education Foundation (TEF), which focuses on improving education through IT, as evidenced by the establishment of a Digital Learning Centre and upgrades to computer laboratories. </p>
+          <p>The school is supported by the government, which focuses on improving education through IT, as evidenced by the establishment of a Digital Learning Centre and upgrades to computer laboratories. </p>
         </article>
         <article class="card">
           <h3>Public-Private Collaboration</h3>
@@ -357,19 +357,19 @@ html {
           <p>The school aims to create a dynamic and supportive learning environment where students can develop their full potential. </p>
         </article>
       </section>
-
+<h2 style="font-size:28px; margin-bottom:20px; text-align:center; font-weight:var(--fw-heading);">Gallery</h2>
       <section id="gallery" class="image-grid">
         <div class="image-card">
           <img src="images/pic1.jpg" alt="Music Festival" />
-          <div class="caption">Music Festival</div>
+          <div class="caption">Ambience</div>
         </div>
         <div class="image-card">
           <img src="images/pic2.jpg" alt="Taekwondo 2023" />
-          <div class="caption">Taekwondo 2023</div>
+          <div class="caption">Taekwondo 2025</div>
         </div>
         <div class="image-card">
           <img src="images/pic3.jpg" alt="Taekwondo 2023" />
-          <div class="caption">Taekwondo 2023</div>
+          <div class="caption">Morning Assembly</div>
         </div>
         <div class="image-card">
           <img src="images/pic4.jpg" alt="Learning Library" />
@@ -386,31 +386,9 @@ html {
       </section>
 
       <!-- naye bache bright students -->
-      <section id="bright-students">
-        <h2 style="font-size:28px; margin-bottom:20px; text-align:center; font-weight:var(--fw-heading);">Our Bright Students</h2>
-        <p class="muted small" style="text-align:center; max-width: 600px; margin: 0 auto 30px auto;">Celebrating the achievements and potential of our standout students. We believe in nurturing every talent.</p>
-        <div class="grid">
-          <div class="person-card">
-            <img src="images/brightstudents/uzair.png" alt="Student Name 1" />
-            <h4>Uzair</h4>
-            <p>9th Class Student</p>
-            <p class="small muted">An upcoming future of LPS and Lodhran City, a professional in Math. A backbencher, but always on top.</p>
-          </div>
-          <div class="person-card">
-            <img src="images/brightstudents/azaan.png" alt="Student Name 3" />
-            <h4>Azaan Ahmed</h4>
-            <p></p>
-            <p class="small muted">Hi, I'm Azaan, I really love to do creative stuff like coding, video editing and adobe creative cloud in my spare time!</p>
-          </div>
-          <div class="person-card">
-            <img src="images/brightstudents/ammar.jpeg" alt="Student Name 3" />
-            <h4>Ammar Haider</h4>
-            <p>A backbencher’s mind, a mathematician’s soul. The next big thing from Lodhran City.</p>
-            <p class="small muted"></p>
-          </div>
-          </div>
-        </div>
-      </section>
+       <!-- im removing this it looks so bad  -->
+
+
 
       <!-- staff ☠️ -->
       <section id="teaching-staff">
@@ -419,7 +397,7 @@ html {
         <div class="grid">
           <div class="person-card">
             <img src="images/staff/principal.png" alt="Principal Rashid Anwar" />
-            <h4>Mr. Rashid Anwar</h4>
+            <h4>Mr. Zafar Kamal Hashmi</h4>
             <p>Principal</p>
             <p class="small muted">Leading our school with vision and dedication since 2024, ensuring excellence in education.</p>
           </div>
@@ -458,7 +436,7 @@ html {
       </section>
 
       <section id="timeline" class="feature">
-        <div class="preview">Current</div>
+        <div class="preview">LPS</div>
         <div>
           <h3>Principal's Message</h3>
           <p class="muted small">A message from our current esteemed Principal.</p>
@@ -468,12 +446,12 @@ html {
       <section class="timeline">
         <div class="step">
           <div class="dot"></div>
-          <div class="meta"><h4>Mr. Rashid Anwar</h4><p class="muted small">2024 - Current</p>
+          <div class="meta"><h4>Mr. Zafar Kamal Hashmi</h4><p class="muted small">2026 - Current</p>
             <p class="muted small" style="margin-top: 8px;">"I am honored to lead Lodhran Public School as we continue our journey of academic excellence and holistic development. Our commitment is to provide a nurturing and innovative environment where every student can thrive."</p>
           </div>
         </div>
       </section>
-      
+      <div class="video-container"> <iframe src="https://www.youtube.com/embed/1-kBVlYv3ik" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen> </iframe> </div>
       <!-- Contact Form -->
       <section id="contact">
         <h2 style="font-size:28px; margin-bottom:20px; text-align:center; font-weight:var(--fw-heading);">Contact Us</h2>
@@ -487,6 +465,7 @@ html {
       </section>
 
       <p style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;font-weight:bold;">Contributed by Azaan.</p>
+      <p style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;font-weight:bold;">Contact Management: lodhran.public.school.2024@gmail.com</p>
     </main>
   </div>
 
