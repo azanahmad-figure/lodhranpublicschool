@@ -59,12 +59,13 @@
     .entry-box{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center;padding:24px}
     .entry-kicker{font-size:12px;letter-spacing:.42em;text-transform:uppercase;color:#93a4bf;font-weight:700;opacity:.9}
     .enter-logo{position:relative;
-      width:118px;height:118px;border-radius:50%;display:grid;place-items:center;font-size:32px;font-weight:950;letter-spacing:.08em;color:#fff;
+      width:118px;height:118px;border-radius:50%;display:grid;place-items:center;overflow:hidden;
       background:radial-gradient(circle at 35% 28%,rgba(255,255,255,.18),transparent 24%),linear-gradient(145deg,#151a2b,#090d18);
       border:1px solid rgba(255,255,255,.36);
       box-shadow:0 0 0 1px rgba(124,58,237,.18),0 0 32px rgba(124,58,237,.26),0 0 80px rgba(34,211,238,.12),inset 0 0 34px rgba(255,255,255,.04);
       animation:floatLogo 4.5s ease-in-out infinite,logoBreath 3s ease-in-out infinite;
     }
+    .enter-logo img{width:78%;height:78%;display:block;object-fit:contain;object-position:center;transform:scale(1.04);filter:drop-shadow(0 4px 12px rgba(0,0,0,.3));}
     .enter-logo::after{content:"";position:absolute;width:150px;height:150px;border-radius:50%;border:1px solid rgba(255,255,255,.08);box-shadow:0 0 28px rgba(124,58,237,.16);}
     .enter-box h2{margin:0;font-size:clamp(30px,6vw,58px);font-weight:900;letter-spacing:-.045em;color:#fff;text-shadow:0 5px 30px rgba(0,0,0,.45)}
     .enter-box p{margin:0;color:#9eacc3;font-size:clamp(11px,2vw,14px);letter-spacing:.28em;text-transform:uppercase;font-weight:700}
@@ -127,7 +128,8 @@
     .top-header::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,5,12,.90),rgba(5,7,14,.64) 48%,rgba(3,5,10,.95));z-index:0}
     .top-header::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 10%,rgba(124,58,237,.18),transparent 32%)}
     .top-header .brand{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;margin:0;padding:50px 20px 36px}
-    .top-header .logo{width:104px;height:104px;border-radius:50%;display:grid;place-items:center;font-size:28px;font-weight:950;letter-spacing:.08em;color:#fff;background:linear-gradient(145deg,#141928,#070a12);border:1px solid rgba(255,255,255,.32);box-shadow:0 0 0 6px rgba(255,255,255,.035),0 0 45px rgba(124,58,237,.22)}
+    .top-header .logo{width:104px;height:104px;border-radius:50%;display:grid;place-items:center;overflow:hidden;background:linear-gradient(145deg,#141928,#070a12);border:1px solid rgba(255,255,255,.32);box-shadow:0 0 0 6px rgba(255,255,255,.035),0 0 45px rgba(124,58,237,.22)}
+    .top-header .logo img{width:78%;height:78%;display:block;object-fit:contain;object-position:center;transform:scale(1.04);filter:drop-shadow(0 4px 12px rgba(0,0,0,.3));}
     .top-header .brand h1{font-size:clamp(28px,5vw,48px);font-weight:900;letter-spacing:-.045em;color:#fff;text-shadow:0 3px 20px rgba(0,0,0,.7)}
     .top-header .brand p{font-size:clamp(12px,2vw,15px);letter-spacing:.2em;text-transform:uppercase;color:#9ca9bf;font-weight:700}
     .navbar{position:relative;z-index:1;background:rgba(3,5,10,.68);border-top:1px solid rgba(255,255,255,.08);backdrop-filter:blur(14px)}
@@ -200,6 +202,13 @@
 
     .reveal{opacity:0;transform:translateY(32px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)!important}.reveal.visible{opacity:1;transform:none}
 
+
+    .contact-honeypot{position:absolute!important;left:-10000px!important;top:auto!important;width:1px!important;height:1px!important;opacity:0!important;pointer-events:none!important}
+    .contact-status{grid-column:1/3;min-height:20px;margin:0;text-align:center;font-size:13px;color:var(--muted);transition:opacity .2s ease}
+    .contact-status.success{color:#8ef0c1}
+    .contact-status.error{color:#ff9d9d}
+    .send:disabled{opacity:.65;transform:none!important;filter:none!important;cursor:wait!important}
+
     @media (max-width:980px){body{padding:20px}.hero{flex-direction:column;text-align:center;gap:24px}.hero p{max-width:100%}.hero .glass-card{width:80%;height:auto;padding:20px}.grid,.image-grid,#bright-students .grid,#teaching-staff .grid{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}}
     @media (max-width:600px){.top-header .brand{padding:34px 16px 24px}.top-header .logo{width:84px;height:84px;font-size:23px}.navbar a{padding:11px 10px;font-size:13px}.enter-logo{width:96px;height:96px;font-size:27px}.enter-box h2{font-size:34px}.entry-kicker{letter-spacing:.28em}}
     @media (max-width:500px){body{padding:15px}.hero h2{font-size:24px}.grid,.image-grid,#bright-students .grid,#teaching-staff .grid{grid-template-columns:1fr}.person-card img{width:100px;height:100px}}
@@ -215,7 +224,7 @@
     <canvas id="entryCanvas"></canvas>
     <div class="entry-box">
       <div class="entry-kicker">Lodhran · Punjab · Pakistan</div>
-      <div class="logo enter-logo">LPS</div>
+      <div class="logo enter-logo"><img src="images/logo.png" alt="Lodhran Public School logo" /></div>
       <h2>Lodhran Public School</h2>
       <p>Honour ⋆ Wisdom ⋆ Quality</p>
       <button class="enter-btn" id="enterBtn" type="button">Enter Website</button>
@@ -231,7 +240,7 @@
 
     <header class="top-header">
       <div class="brand">
-        <div class="logo">LPS</div>
+        <div class="logo"><img src="images/logo.png" alt="Lodhran Public School logo" /></div>
         <h1>Lodhran Public School</h1>
         <p>Honour ⋆ Wisdom ⋆ Quality</p>
       </div>
@@ -389,11 +398,13 @@
       <section id="contact">
         <h2 style="font-size:28px; margin-bottom:20px; text-align:center; font-weight:var(--fw-heading);">Contact Us</h2>
         <p class="muted small" style="text-align:center; max-width: 600px; margin: 0 auto 30px auto;">Have questions or want to learn more? Reach out to us through the form below.</p>
-        <form>
-          <input type="text" placeholder="Your Name" />
-          <input type="email" placeholder="Your Email" />
-          <textarea placeholder="Your Message"></textarea>
-          <button type="submit" class="send">Send Message</button>
+        <form id="contactForm" novalidate>
+          <input id="contactName" name="name" type="text" placeholder="Your Name" autocomplete="name" maxlength="80" required />
+          <input id="contactEmail" name="email" type="email" placeholder="Your Email" autocomplete="email" maxlength="160" required />
+          <textarea id="contactMessage" name="message" placeholder="Your Message" maxlength="1500" required></textarea>
+          <input class="contact-honeypot" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <button type="submit" class="send" id="sendMessageBtn">Send Message</button>
+          <p id="contactStatus" class="contact-status" role="status" aria-live="polite"></p>
         </form>
       </section>
 
@@ -488,6 +499,63 @@
     window.addEventListener('scroll', onScroll, {passive:true});
     onScroll();
     toTop.addEventListener('click', () => window.scrollTo({top:0, behavior: reduceMotion ? 'auto' : 'smooth'}));
+
+
+    /* ---------- Contact form -> secure server relay -> Discord webhook ---------- */
+    const contactForm = document.getElementById('contactForm');
+    const contactStatus = document.getElementById('contactStatus');
+    const sendMessageBtn = document.getElementById('sendMessageBtn');
+
+    if (contactForm) {
+      contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        contactStatus.className = 'contact-status';
+        contactStatus.textContent = '';
+
+        const formData = new FormData(contactForm);
+        const payload = {
+          name: String(formData.get('name') || '').trim(),
+          email: String(formData.get('email') || '').trim(),
+          message: String(formData.get('message') || '').trim(),
+          website: String(formData.get('website') || '').trim()
+        };
+
+        if (!payload.name || !payload.email || !payload.message) {
+          contactStatus.className = 'contact-status error';
+          contactStatus.textContent = 'Please fill in all fields.';
+          return;
+        }
+
+        if (!/^\S+@\S+\.\S+$/.test(payload.email)) {
+          contactStatus.className = 'contact-status error';
+          contactStatus.textContent = 'Please enter a valid email address.';
+          return;
+        }
+
+        sendMessageBtn.disabled = true;
+        sendMessageBtn.textContent = 'Sending…';
+
+        try {
+          const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+          const result = await response.json().catch(() => ({}));
+          if (!response.ok) throw new Error(result.error || 'Message could not be sent.');
+
+          contactForm.reset();
+          contactStatus.className = 'contact-status success';
+          contactStatus.textContent = 'Message sent successfully. Thank you!';
+        } catch (err) {
+          contactStatus.className = 'contact-status error';
+          contactStatus.textContent = err.message || 'Something went wrong. Please try again.';
+        } finally {
+          sendMessageBtn.disabled = false;
+          sendMessageBtn.textContent = 'Send Message';
+        }
+      });
+    }
 
     /* ---------- Reveal-on-scroll (fade + slide up) ---------- */
     if(!reduceMotion && 'IntersectionObserver' in window){
